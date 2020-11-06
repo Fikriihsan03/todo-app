@@ -8,14 +8,12 @@ const Task = ({massage,id,setTask,currentTask}) =>{
     const [toggledTrue,setToggled] = React.useState(false)
     return (
         <>
-        <div className ="row d-flex justify-content-center">
+        <div className ="container row d-flex justify-content-between">
         <i onClick={()=>setToggled(prevtoggle => !prevtoggle)} 
-        className={toggledTrue?"fas fa-check-square": "far fa-square"}>
+            className={toggledTrue?"fas fa-check-square": "far fa-square"}>
         </i>
-            <li className="col-md-9 col-sm-5 ">
-                {massage}
-            </li>
-            <button onClick={()=>handleDelete()}className="col-md-2 col-sm-1 fa fa-trash"></button>
+            <li >{massage}</li>
+            <button onClick={()=>handleDelete()}className=" fa fa-trash btn btn-primary"></button>
         </div>
         </>
         )
