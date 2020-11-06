@@ -50,7 +50,7 @@ const App = ()=>{
               <div className="row">
               <p>Darkmode</p>
               <label className="switch">
-                  <input type="checkbox" onClick={()=>setDarkMode(prevMode => !prevMode)} />
+                  <input checked={darkMode}type="checkbox" onClick={()=>setDarkMode(prevMode => !prevMode)} />
                   <span className="slider round"></span>
                 </label>
               </div>
