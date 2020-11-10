@@ -43,14 +43,14 @@ const App = ()=>{
   }
   return (
       <>
-      <div className={darkMode ? "card-body":"light-mode"}>
+      <div className={darkMode ? "card-body dark-mode":"card-body light-mode"}>
         <div className="dark-mode">
           <div className = "container">
             <h1 className = "text-center text-uppercase">my tasks</h1>
               <div className="row">
               <p>Darkmode</p>
               <label className="switch">
-                  <input checked={darkMode}type="checkbox" onClick={()=>setDarkMode(prevMode => !prevMode)} />
+                  <input defaultChecked={darkMode}type="checkbox" onClick={()=>setDarkMode(prevMode => !prevMode)} />
                   <span className="slider round"></span>
                 </label>
               </div>

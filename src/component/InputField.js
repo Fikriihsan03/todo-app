@@ -4,8 +4,9 @@ const InputField = ({add,total}) => {
     const [currentValue,setValue] = useState('')
     const addTask = () =>{
         const newTask = {
-            id:total.length+1,
+            id:Date.now(),
             massage :currentValue,
+            isDone:false
         }
         add([...total,newTask])
         setValue('')
