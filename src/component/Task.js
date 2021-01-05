@@ -6,6 +6,19 @@ const Task = ({ massage, id, setTask, currentTask, isDone }) => {
     setTask(deletedTask);
   };
   const [toggledTrue, setToggled] = React.useState(isDone);
+  React.useEffect(() => {
+    const todos = JSON.parse(localStorage.getItem("todos"));
+    const todo = todos.findIndex((todo) => todo.id === id);
+
+    let newArray = [...todos];
+    newArray[todo] = {
+      ...newArray[todo],
+      isDone: toggledTrue,
+    };
+
+    const jsonString = JSON.stringify(newArray);
+    localStorage.setItem("todos", jsonString);
+  }, [toggledTrue, id]);
   return (
     <>
       <div className="container row d-flex justify-content-between">
